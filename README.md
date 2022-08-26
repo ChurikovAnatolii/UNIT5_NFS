@@ -33,7 +33,7 @@
 >> Export list for 192.168.1.92:    
 >> /mnt/share/upload *
 
--***Для возможности использовать udp-протокол изменяем файл [/etc/nfs.conf]() на сервере. В раздел [nfsd] добавим параметр udp=y, перезапустим сервис nfs-server.
+-***Для возможности использовать udp-протокол изменяем файл [/etc/nfs.conf](https://github.com/ChurikovAnatolii/UNIT5_NFS/blob/main/nfs.conf) на сервере. В раздел [nfsd] добавим параметр udp=y, перезапустим сервис nfs-server.
 
 -***Добавим в fstab запись для автоматического монтирования при старте 
 
