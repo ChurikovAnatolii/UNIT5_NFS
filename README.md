@@ -23,14 +23,17 @@
 
 ### 3. На клиента она должна автоматически монтироваться при старте (fstab или autofs)
 
--***Установим nfs-окружение на клиенте
+-***Установим nfs-окружение на клиенте**
 > yum install nfs-utils -y  
 > systemctl start nfs-server
 > mkdir mnt/share/upload 
-> systemctl enable  nfs-server -**Добавим старт при запуске**   
+> systemctl enable  nfs-server -**Добавим старт при запуске**  
+  
 > showmount --exports 192.168.1.92 -**Проверим, что экспортируется на сервере**    
 >> Export list for 192.168.1.92:    
->> /mnt/share/upload *    
+>> /mnt/share/upload *
 
-> 
+-***Для возможности использовать udp-протокол изменяем файл [/etc/nfs.conf]() на сервере. В раздел [nfsd] добавим параметр udp=y, перезапустим сервис nfs-server.
+
+-***Добавим в fstab запись для автоматического монтирования при старте 
 
