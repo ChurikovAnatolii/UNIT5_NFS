@@ -44,3 +44,10 @@
 > mount | grep nfs  
 >>192.168.1.92:/mnt/share/upload on /mnt/share/upload type nfs (rw,relatime,vers=3,rsize=32768,wsize=32768,namlen=255,hard,proto=udp,timeo=11,retrans=3,sec=sys,mountaddr=192.168.1.92,mountvers=3,mountport=20048,mountproto=udp,local_lock=none,addr=192.168.1.92)  
 
+### 4. Включенный firewall.
+
+> firewall-cmd --permanent --add-service mountd
+> firewall-cmd --permanent --add-service rpc-bind
+> firewall-cmd --permanent --add-service nfs
+
+-**Изменим файл [/etc/nfs.conf](https://github.com/ChurikovAnatolii/UNIT5_NFS/blob/main/nfs.conf) -в нем укажем порты, которые будут использовать RPC 
