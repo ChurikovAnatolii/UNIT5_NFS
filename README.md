@@ -9,14 +9,14 @@
 -***Установим nfs-окружение на сервере, создадим директорию и расшарим ее***
 > yum install nfs-utils -y  
 > systemctl start nfs-server  
-> systemctl enable  nfs-server -**Добавим старт при запуске***  
+> systemctl enable  nfs-server -**Добавим старт при запуске**  
 > mkdir mnt/share/upload  
 > echo 'mnt/share/upload/ *(rw,no_root_squash)' >> etc/exports
 
 > exportfs -s 
 >> /mnt/share/upload *(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
 
-> showmount --exports -**Проверим, что экспортируется***  
+> showmount --exports -**Проверим, что экспортируется**  
 >> Export list for server:  
 >> /mnt/share/upload *  
 
